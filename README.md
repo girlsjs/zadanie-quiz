@@ -7,9 +7,8 @@ Jest to projekt dla uczestniczek girls-js. Uczymy się korzystać z Gita i GitHu
 W prawym górnym rogu tego ekranu znajduje się przycisk **Fork**. Użyj go a kopia tego repozytorium pojawi się na Twoim koncie GitHub.
 
 ### 2. Clone
-W swoim repozytorium naciśnij przycisk **clone or download**. Adres repozytorium skopiuje się do schowka Twojego komputera. Teraz otwórz terminal i nawiguj do dowolnego folderu uzywając komend cd .. (katalog w górę) i cd jakiś-katalog.
-Tam napisz 
-git clone i po spacji wklej adres zdalnego (czyli swojego na GitHubie) repozytorium. Zostanie ono sklonowane na Twój komputer, do nowego katalogu, który utworzy się sam podczas klonowania.
+W repozytorium na swoim koncie GitHub, które powstało przed chwilą, poszukaj przycisku **clone or download**. W modalu jest adres Twojego repozytorium - skopiuj go. Teraz otwórz terminal i nawiguj do dowolnego folderu uzywając komend cd .. (katalog w górę) i cd jakiś-katalog.
+Tam napisz `git clone` i po spacji wklej adres zdalnego (czyli swojego na GitHubie) repozytorium. Zostanie ono sklonowane na Twój komputer, do nowego katalogu, który utworzy się sam podczas klonowania.
 >git clone https://github.com/twoje-konto/js-quiz.git
 
 ## 3. (Albo Pull)
@@ -17,7 +16,8 @@ Jeśli jest to Twoje kolejne zadanie w tym repozytorium, najpierw pobierz najnow
 Przy pracy z forkiem (czyli to, co my robimy), git musi ogarniać 3 repozytoria: lokalne na naszym komputerze, zdalne na naszym koncie GitHub i zdalne wspólne czyli to z którego forkowałyśmy.
 Przez polecenie 
 >git remote -v 
-możemy dowiedzieć się, jakie mamy ustawione zdalne repozytoria. Tradycja githuba mówi, że origin to repozytorium nasze własne, z którego klonowałyśmy a upstream to repozytorium wspólne (z którego forkowałyśmy).
+
+możemy dowiedzieć się, jakie mamy ustawione zdalne repozytoria. Tradycja githuba mówi, że **origin** to repozytorium nasze własne, z którego klonowałyśmy a **upstream** to repozytorium wspólne (z którego forkowałyśmy).
 
 Origin tworzy się automatycznie przy klonowaniu, musimy jeszcze ustawić upstream pisząc: 
 >git remote add upstream git@github.com:user/project.git (tu wstawię adres repo girls.js)
@@ -25,11 +25,11 @@ Origin tworzy się automatycznie przy klonowaniu, musimy jeszcze ustawić upstre
 Żeby pobrać najświeższe zmiany, napiszmy 
 >git pull upstream 
 
-I tak będziemy robić zawsze przed rozpoczęciem nowego zadania.
+Pobieraj zmiany zawsze przed rozpoczęciem nowego zadania.
 
 ## 3. Issue
-W naszym wspólnym repozytorium na GitHubie (tu adres) jest zakładka Issues. Wybierz zadanie dla siebie i przypisz się do niego (assign to me). Jeśli masz pytania - zadaj je w komentarzu pod zadaniem.
-W swoim ulubionym edytorze otwórz sklonowane repozytorium (znajdujesz się na branchu master) i utwórz nowy branch o nazwie issue-tuWstawićNrIssue, np issue-1. Mozesz do tego uzyć narzędzi w edytorze albo napisać w terminalu: 
+W naszym wspólnym repozytorium na GitHubie (tu wstawię adres) jest zakładka Issues. Wybierz zadanie dla siebie i przypisz się do niego (assign to me). Jeśli masz pytania - zadaj je w komentarzu pod zadaniem.
+W swoim ulubionym edytorze otwórz sklonowane repozytorium (znajdujesz się na branchu master) i utwórz nowy branch o nazwie `issue-tuWstawićNrIssue`, np `issue-1`. Mozesz do tego uzyć narzędzi w edytorze albo napisać w terminalu: 
 > git checkout -b issue-1
 
 Na tym branchu wykonaj wybrane przez Ciebie zadanie.
@@ -42,10 +42,10 @@ a następnie:
 >git commit -m "tu commit message czyli kilka słów, czego dotyczyła zmiana, np add padding"
 
 ## 5. Push
-Teraz mozesz wysłać zmiany na swój github. W terminalu piszemy (pierwszy push dla danego brancha robimy z opcją -u, żeby połączyć go z branchem zdalnym ):
+Teraz mozesz wysłać zmiany na swój github. W terminalu piszemy (pierwszy push dla danego brancha robimy z opcją `-u`, żeby połączyć go z branchem zdalnym ):
 >git push -u origin issue-1
 
-W kolejnych pushach pomijamy -u. 
+W kolejnych pushach pomijamy `-u`. 
 
 ## Pull request
 Zaloguj się na github do swojego konta i wejdź do repozytorium, do którego właśnie coś dodałaś. Jest tam przycisk **new pull request**, kltóry po kliknięciu przeniesie Cię na stronę naszego wspólnego repozytorium. Na górze są opcje, co z czym porównujemy. **Base repository** jest docelowe, **head repository** jest Twoje. Jako compare wybierz branch, na którym pracowałaś, jako base branch - master. Następnie użyj przycisku **create pull request** (możesz dodać komentarz jeśli chcesz). 
