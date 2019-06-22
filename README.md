@@ -7,22 +7,22 @@ Jest to projekt dla uczestniczek girls-js. Uczymy się korzystać z Gita i GitHu
 W prawym górnym rogu tego ekranu znajduje się przycisk **Fork**. Użyj go a kopia tego repozytorium pojawi się na Twoim koncie GitHub.
 
 ### 2. Clone
-W repozytorium na swoim koncie GitHub, które powstało przed chwilą, poszukaj przycisku **clone or download**. W modalu jest adres Twojego repozytorium - skopiuj go. Teraz otwórz terminal i nawiguj do dowolnego folderu uzywając komend cd .. (katalog w górę) i cd jakiś-katalog.
-Tam napisz `git clone` i po spacji wklej adres zdalnego (czyli swojego na GitHubie) repozytorium. Zostanie ono sklonowane na Twój komputer, do nowego katalogu, który utworzy się sam podczas klonowania.
+W repozytorium na swoim koncie GitHub, które powstało przed chwilą, poszukaj przycisku **clone or download**. W modalu jest adres Twojego repozytorium - skopiuj go. Teraz otwórz terminal i nawiguj do dowolnego folderu uzywając komend `cd ..` (katalog w górę) i `cd jakiś-katalog`.
+Tam napisz `git clone` i po spacji wklej adres zdalnego (czyli swojego na GitHubie) repozytorium. Zostanie ono sklonowane na Twój komputer, do nowego katalogu, który utworzy się sam podczas klonowania. Czyli będzie to wyglądało mniej więcej tak:
 >git clone https://github.com/twoje-konto/js-quiz.git
 
 ## 3. (Albo Pull)
-Jeśli jest to Twoje kolejne zadanie w tym repozytorium, najpierw pobierz najnowsze zmiany z naszego wspólnego repozytorium, ponieważ od czasu gdy je sobie klonowałaś ktoś mógł juz coś dodać.
+Jeśli jest to Twoje kolejne zadanie, najpierw pobierz najnowsze zmiany z naszego wspólnego repozytorium, ponieważ od czasu gdy je sobie klonowałaś ktoś mógł juz coś dodać.
 Przy pracy z forkiem (czyli to, co my robimy), git musi ogarniać 3 repozytoria: lokalne na naszym komputerze, zdalne na naszym koncie GitHub i zdalne wspólne czyli to z którego forkowałyśmy.
 Przez polecenie 
 >git remote -v 
 
 możemy dowiedzieć się, jakie mamy ustawione zdalne repozytoria. Tradycja githuba mówi, że **origin** to repozytorium nasze własne, z którego klonowałyśmy a **upstream** to repozytorium wspólne (z którego forkowałyśmy).
 
-Origin tworzy się automatycznie przy klonowaniu, musimy jeszcze ustawić upstream pisząc: 
+Origin tworzy się automatycznie przy klonowaniu, musimy więc jeszcze ustawić upstream pisząc: 
 >git remote add upstream git@github.com:user/project.git (tu wstawię adres repo girls.js)
 
-Żeby pobrać najświeższe zmiany, napiszmy 
+Żeby pobrać najświeższe zmiany, użyj komendy:
 >git pull upstream 
 
 Pobieraj zmiany zawsze przed rozpoczęciem nowego zadania.
