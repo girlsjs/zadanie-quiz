@@ -1,5 +1,5 @@
 # js-quiz
-Jest to projekt dla uczestniczek girls.js. Uczymy się korzystać z Gita i GitHuba, tworząc wspólnie prostą aplikację, jaką jest quiz w JavaScripcie.
+Jest to projekt dla uczestniczek girls-js. Uczymy się korzystać z Gita i GitHuba, tworząc wspólnie prostą aplikację, jaką jest quiz w JavaScripcie.
 
 ## Jak korzystać z tego repozytorium i dodawać do niego swoje fragmenty kodu:
 
@@ -20,7 +20,7 @@ Przez polecenie
 możemy dowiedzieć się, jakie mamy ustawione zdalne repozytoria. Tradycja githuba mówi, że **origin** to repozytorium nasze własne, z którego klonowałyśmy a **upstream** to repozytorium wspólne (z którego forkowałyśmy).
 
 Origin tworzy się automatycznie przy klonowaniu, musimy więc jeszcze ustawić upstream pisząc: 
->git remote add upstream https://github.com/girlsjs/zadanie-quiz.git
+>git remote add upstream git@github.com:user/project.git (tu wstawię adres repo girls.js)
 
 Żeby pobrać najświeższe zmiany, użyj komendy:
 >git pull upstream 
@@ -28,7 +28,7 @@ Origin tworzy się automatycznie przy klonowaniu, musimy więc jeszcze ustawić 
 Pobieraj zmiany zawsze przed rozpoczęciem nowego zadania.
 
 ## 3. Issue
-W naszym wspólnym repozytorium na GitHubie (https://github.com/girlsjs/zadanie-quiz) jest zakładka Issues. Wybierz zadanie dla siebie i przypisz się do niego (assign to me). Jeśli masz pytania - zadaj je w komentarzu pod zadaniem.
+W naszym wspólnym repozytorium na GitHubie (tu wstawię adres) jest zakładka Issues. Wybierz zadanie dla siebie i przypisz się do niego (assign to me). Jeśli masz pytania - zadaj je w komentarzu pod zadaniem.
 W swoim ulubionym edytorze otwórz sklonowane repozytorium (znajdujesz się na branchu master) i utwórz nowy branch o nazwie `issue-tuWstawićNrIssue`, np `issue-1`. Mozesz do tego uzyć narzędzi w edytorze albo napisać w terminalu: 
 > git checkout -b issue-1
 
