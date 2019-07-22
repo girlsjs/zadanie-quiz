@@ -1,5 +1,5 @@
 # js-quiz
-Jest to projekt dla uczestniczek girls-js. Uczymy się korzystać z Gita i GitHuba, tworząc wspólnie prostą aplikację, jaką jest quiz w JavaScripcie.
+Jest to projekt dla uczestniczek girls.js. Uczymy się korzystać z Gita i GitHuba, tworząc wspólnie prostą aplikację, jaką jest quiz w JavaScripcie.
 
 ## Jak korzystać z tego repozytorium i dodawać do niego swoje fragmenty kodu:
 
@@ -20,7 +20,7 @@ Przez polecenie
 możemy dowiedzieć się, jakie mamy ustawione zdalne repozytoria. Tradycja githuba mówi, że **origin** to repozytorium nasze własne, z którego klonowałyśmy a **upstream** to repozytorium wspólne (z którego forkowałyśmy).
 
 Origin tworzy się automatycznie przy klonowaniu, musimy więc jeszcze ustawić upstream pisząc: 
->git remote add upstream git@github.com:user/project.git (tu wstawię adres repo girls.js)
+>git remote add upstream https://github.com/girlsjs/zadanie-quiz.git
 
 Żeby pobrać najświeższe zmiany, użyj komendy:
 >git pull upstream 
