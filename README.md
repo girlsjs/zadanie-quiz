@@ -28,7 +28,7 @@ Origin tworzy się automatycznie przy klonowaniu, musimy więc jeszcze ustawić 
 Pobieraj zmiany zawsze przed rozpoczęciem nowego zadania.
 
 ## 3. Issue
-W naszym wspólnym repozytorium na GitHubie (tu wstawię adres) jest zakładka Issues. Wybierz zadanie dla siebie i przypisz się do niego (assign to me). Jeśli masz pytania - zadaj je w komentarzu pod zadaniem.
+W naszym wspólnym repozytorium na GitHubie (https://github.com/girlsjs/zadanie-quiz) jest zakładka Issues. Wybierz zadanie dla siebie i przypisz się do niego (assign to me). Jeśli masz pytania - zadaj je w komentarzu pod zadaniem.
 W swoim ulubionym edytorze otwórz sklonowane repozytorium (znajdujesz się na branchu master) i utwórz nowy branch o nazwie `issue-tuWstawićNrIssue`, np `issue-1`. Mozesz do tego uzyć narzędzi w edytorze albo napisać w terminalu: 
 > git checkout -b issue-1
 
