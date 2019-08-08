@@ -35,7 +35,7 @@ W swoim ulubionym edytorze otwórz sklonowane repozytorium (znajdujesz się na b
 Na tym branchu wykonaj wybrane przez Ciebie zadanie.
 
 ## 4. Commit
-Oprócz zwykłego zapisywania zmian od czasu do czasu wykonuj commit, uzywając narzedzi w edytorze albo pisząc w terminalu najpierw 
+Oprócz zwykłego zapisywania zmian od czasu do czasu wykonuj commit, używając narzędzi w edytorze albo pisząc w terminalu najpierw 
 > git add . 
 
 a następnie: 
@@ -48,7 +48,7 @@ Teraz mozesz wysłać zmiany na swój github. W terminalu piszemy (pierwszy push
 W kolejnych pushach pomijamy `-u`. 
 
 ## Pull request
-Zaloguj się na github do swojego konta i wejdź do repozytorium, do którego właśnie coś dodałaś. Jest tam przycisk **new pull request**, kltóry po kliknięciu przeniesie Cię na stronę naszego wspólnego repozytorium. Na górze są opcje, co z czym porównujemy. **Base repository** jest docelowe, **head repository** jest Twoje. Jako compare wybierz branch, na którym pracowałaś, jako base branch - master. Następnie użyj przycisku **create pull request** (możesz dodać komentarz jeśli chcesz). 
+Zaloguj się na github do swojego konta i wejdź do repozytorium, do którego właśnie coś dodałaś. Jest tam przycisk **new pull request**, który po kliknięciu przeniesie Cię na stronę naszego wspólnego repozytorium. Na górze są opcje, co z czym porównujemy. **Base repository** jest docelowe, **head repository** jest Twoje. Jako compare wybierz branch, na którym pracowałaś, jako base branch - master. Następnie użyj przycisku **create pull request** (możesz dodać komentarz jeśli chcesz). 
 
 ## Code review
 Ktoś z nas przeczyta Twoje zmiany i ustosunkuje się do nich w komentarzach. Możesz na te komentarze odpowiadać, pytać itd. Często konieczne są jednak poprawki. Zrób je na tym samym branchu, nie zapominając o commit. Następnie: 
