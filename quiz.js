@@ -38,3 +38,8 @@ const questions = [
       correctAnswer: "c"
     }
   ];
+
+  function showQuestion(i) {
+    var paragraph = document.querySelector('main p');
+    paragraph.textContent = questions[i].question;
+  }
