@@ -59,7 +59,13 @@ Twój pull request zaktualizuje się sam i więc może być ponownie czytany.
 ## Merge
 Jeśli nie będzie już żadnych zastrzeżeń i ostateczna wersja zostanie uzgodniona, Twój kod zostanie scalony (merge) ze wspólnym repozytorium. To jest koniec zadania!
 
+--------
+###  :bulb: Porada
 
+Jak testować funkcje, które nie są na razie nigdzie wywoływane w naszym programie (nie ma np przycisku do kliknięcia albo jakiegoś innego eventu)???
 
+-W konsoli. Po otwarciu pliku index.html w przeglądarce uruchom narzędzia programistki i w konsoli wywołaj tę funkcję (czyli po jej nazwie umieść nawiasy, z parametrem lub bez w zależności od tego, czego Twoja funkcja wymaga) np. `showQuestion(3)`. Wtedy możesz sprawdzić, czy dzieje się to, czego oczekujesz.
+
+-Albo zrób sobie roboczy przycisk, który klikiem wywoła tę funkcję. Ale usuń go przed pull requestem :)
 
 
