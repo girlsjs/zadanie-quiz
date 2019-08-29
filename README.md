@@ -54,7 +54,7 @@ Zaloguj się na github do swojego konta i wejdź do repozytorium, do którego w�
 Ktoś z nas przeczyta Twoje zmiany i ustosunkuje się do nich w komentarzach. Możesz na te komentarze odpowiadać, pytać itd. Często konieczne są jednak poprawki. Zrób je na tym samym branchu, nie zapominając o commit. Następnie: 
 > git push origin issue-1
 
-Twój pull request zaktualizuje się sam i więc może być ponownie czytany. 
+Twój pull request zaktualizuje się sam i może być ponownie czytany. 
 
 ## Merge
 Jeśli nie będzie już żadnych zastrzeżeń i ostateczna wersja zostanie uzgodniona, Twój kod zostanie scalony (merge) ze wspólnym repozytorium. To jest koniec zadania!
