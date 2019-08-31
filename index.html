@@ -6,21 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <link rel="stylesheet" href="quiz.css" />
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="quiz.js" defer></script>
   </head>
   <body>
-  	<header>
+  	<header class="header-quiz">
   		<h1>JS Quiz App</h1>
 	</header>
-	<div class="content">
-		<main>
-	        <p>treść pytania</p>
-	            <radiogroup class="answers">         
-	                <label id="answer1_label"><input type="radio" id="answer1" name="answer" value="a"/>odpowiedź pierwsza</label>
-	                <label id="answer2_label"><input type="radio" id="answer2" name="answer" value="b"/>odpowiedź druga</label>
-	                <label id="answer3_label"></label><input type="radio" id="answer3" name="answer" value="c"/>odpowiedź trzecia</label>
-	            </radiogroup>
-	    </main>
+	<div class="line"></div>
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-2"></div>
+			<div class="col-md-10">
+			<div class="content">
+				<main>
+					<p>treść pytania</p>
+					<radiogroup class="answers">
+						<label id="answer1_label">
+							<input type="radio" id="answer1" name="answer" value="a"/>
+							<span class="answer">odpowiedź pierwsza</span>
+						</label>
+						<label id="answer2_label">
+							<input type="radio" id="answer2" name="answer" value="b"/>
+							<span class="answer">odpowiedź druga</span>
+						</label>
+						<label id="answer3_label">
+							<input type="radio" id="answer3" name="answer" value="c"/>
+							<span class="answer">odpowiedź trzecia</span>
+						</label>
+					</radiogroup>
+					<div class="button-answer">
+						<button type="button" class="btn btn-dark">Następne</button>
+					</div>
+				</main>
+			</div>
+		</div>
+	</div>
 	</div>
     <footer>
     	<p>&copy; 2019 Girls.js and friends</p>
