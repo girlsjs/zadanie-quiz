@@ -18,7 +18,5 @@ Liniami oddzieliłam grupy zadań, które można publikować jednocześnie. Po w
 8. Napisać funkcję showNextQuestion, która wywołuje funkcję verify i pokazuje następne pytanie (wywołuje funkcję showQuestion z odpowiednim parametrem)
 9. Dodać przycisk Dalej, który po kliknięciu wywołuje funkcję showNextQuestion, ostylować wg uznania (może połączyć to z zadaniem nr 8)
 
-Tu proponujemy spotkanie z uczestniczkami w celu zaplanowania dalszego rozwoju aplikacji.
-Wtedy zdefiniujemy następne zadania
 
 
