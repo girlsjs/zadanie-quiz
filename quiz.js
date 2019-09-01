@@ -45,6 +45,7 @@ const questions = [
     paragraph.textContent = questions[i].question;
   }
 
+
   // show next question
   const nextButton = document.getElementById('next-btn');
   nextButton.addEventListener("click", showNextQuestion);
@@ -60,5 +61,22 @@ const questions = [
     }
   }
 
+  function showResult() {
+    var mainElement = document.querySelector('main');
 
+    while (mainElement.hasChildNodes()) {
+      mainElement.removeChild(mainElement.firstChild);
+   }
+
+    var titleElement = document.createElement('P');
+    var titleText = document.createTextNode('Koniec Quizu!'); 
+    titleElement.appendChild(titleText);
+    mainElement.appendChild(titleElement);
+
+    var contentElement = document.createElement("P");
+    var correctAnswers = 3
+    var contentText = document.createTextNode('Odpowiedziałaś dobrze na ' + correctAnswers + ' z 4 pytań.'); 
+    contentElement.appendChild(contentText);
+    mainElement.appendChild(contentText);
+  }
   
