@@ -73,9 +73,9 @@ const questions = [
     titleElement.appendChild(titleText);
     mainElement.appendChild(titleElement);
 
-    var contentElement = document.createElement("P");
-    var correctAnswers = 3
-    var contentText = document.createTextNode('Odpowiedziałaś dobrze na ' + correctAnswers + ' z 4 pytań.'); 
+    var contentElement = document.createElement('P');
+    var correctAnswers = 3;
+    var contentText = document.createTextNode('Odpowiedziałaś dobrze na ' + correctAnswers + ' z ' + questions.length + ' pytań.');
     contentElement.appendChild(contentText);
     mainElement.appendChild(contentText);
   }
