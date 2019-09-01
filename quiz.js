@@ -39,23 +39,7 @@ const questions = [
     }
   ];
 
-  function showQuestion() {
-    quest=questions[0].question;
-    ansA=questions[0].answers.a;
-    ansB=questions[0].answers.b;
-    ansC=questions[0].answers.c;
-
-    const elementHeader= document.querySelector('main p');
-    elementHeader.innerHTML+="<p class=\"question\">"+quest+"</p>";
-
-    const element1= document.querySelector('#answer1_label .answer');
-    element1.innerHTML +=ansA;
-
-    const element2= document.querySelector('#answer2_label .answer');
-    element2.innerHTML +=ansB;
-
-    const element3= document.querySelector('#answer3_label .answer');
-    element3.innerHTML +=ansC;
+  function showQuestion(i) {
+    var paragraph = document.querySelector('main p');
+    paragraph.textContent = questions[i].question;
   }
-
-showQuestion();
