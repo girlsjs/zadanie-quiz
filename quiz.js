@@ -39,7 +39,25 @@ const questions = [
     }
   ];
 
+  // show question
   function showQuestion(i) {
     var paragraph = document.querySelector('main p');
     paragraph.textContent = questions[i].question;
   }
+
+  // show next question
+  const nextButton = document.getElementById('next-btn');
+  nextButton.addEventListener("click", showNextQuestion);
+  var currentQuestion = i;
+  
+  function showNextQuestion() {
+    showQuestion(currentQuestion + 1);
+    if (currentQuestion === questions.length - 1) {
+      nextButton.style.display = 'none';
+    } else {
+      nextButton.style.display = 'block';
+    }
+  }
+
+
+  
