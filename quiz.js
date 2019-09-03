@@ -48,10 +48,11 @@ const questions = [
   // show next question
   const nextButton = document.getElementById('next-btn');
   nextButton.addEventListener("click", showNextQuestion);
-  var currentQuestion = i;
+  var currentQuestion = 0;
   
   function showNextQuestion() {
     showQuestion(currentQuestion + 1);
+    currentQuestion += 1;
     if (currentQuestion === questions.length - 1) {
       nextButton.style.display = 'none';
     } else {
