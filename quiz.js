@@ -62,21 +62,15 @@ const questions = [
   }
 
   function showResult() {
-    var mainElement = document.querySelector('main');
 
-    while (mainElement.hasChildNodes()) {
-      mainElement.removeChild(mainElement.firstChild);
-   }
+    let correctAnswers = 3;
+    let titleText = 'Koniec Quizu!';
+    let contentText = `Odpowiedziałaś dobrze na ${correctAnswers} z ${questions.length} pytań.`;
 
-    var titleElement = document.createElement('P');
-    var titleText = document.createTextNode('Koniec Quizu!'); 
-    titleElement.appendChild(titleText);
-    mainElement.appendChild(titleElement);
-
-    var contentElement = document.createElement('P');
-    var correctAnswers = 3;
-    var contentText = document.createTextNode('Odpowiedziałaś dobrze na ' + correctAnswers + ' z ' + questions.length + ' pytań.');
-    contentElement.appendChild(contentText);
-    mainElement.appendChild(contentText);
+    const mainElement = document.querySelector('main');
+    mainElement.innerHTML= `
+      <p>${titleText}</p>
+      <p>${contentText}</p>
+    `;
   }
   
