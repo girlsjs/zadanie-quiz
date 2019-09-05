@@ -79,10 +79,4 @@ const questions = [
   }
   
   startQuiz();
-  function startQuiz(){
-    currentQuestion= 0; 
-    showQuestion(currentQuestion);
-  }
-  
-  startQuiz();
 
