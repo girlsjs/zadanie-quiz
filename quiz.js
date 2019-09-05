@@ -45,7 +45,6 @@ const questions = [
     paragraph.textContent = questions[i].question;
   }
 
-
   // show next question
   const nextButton = document.getElementById('next-btn');
   nextButton.addEventListener("click", showNextQuestion);
@@ -73,4 +72,3 @@ const questions = [
       <p>${contentText}</p>
     `;
   }
-  
