@@ -60,5 +60,15 @@ const questions = [
     }
   }
 
+  function showResult() {
 
-  
+    let correctAnswers = 3;
+    let titleText = 'Koniec Quizu!';
+    let contentText = `Odpowiedziałaś dobrze na ${correctAnswers} z ${questions.length} pytań.`;
+
+    const mainElement = document.querySelector('main');
+    mainElement.innerHTML= `
+      <p>${titleText}</p>
+      <p>${contentText}</p>
+    `;
+  }
