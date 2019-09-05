@@ -41,7 +41,7 @@ const questions = [
 
   // show question
   function showQuestion(i) {
-    var paragraph = document.querySelector('main p');
+    let paragraph = document.querySelector('main p');
     paragraph.textContent = questions[i].question;
   }
 
