@@ -45,7 +45,6 @@ const questions = [
     paragraph.textContent = questions[i].question;
   }
 
-  // show next question
   let currentQuestion = 0;
   
   function showNextQuestion() {
@@ -57,7 +56,20 @@ const questions = [
     } else {
       nextButton.style.display = 'block';
     }
-    
+    setAnswerHint('');
+    showAnswerButton.style.display = 'block';
+  }
+
+  // show answer for current question
+  function showCorrectAnswer() {
+    let correctAnswer = questions[currentQuestion].correctAnswer;
+    setAnswerHint(correctAnswer);
+    showAnswerButton.style.display = 'none';
+  }
+
+  function setAnswerHint(answerText) {
+    let answerParagraph = document.querySelectorAll('main p')[1];
+    answerParagraph.textContent = answerText;
   }
 
   
@@ -88,7 +100,9 @@ const questions = [
     `
     const nextButton = document.getElementById('next-btn');
     nextButton.addEventListener("click", showNextQuestion);
-      
+    const showAnswerButton = document.getElementById('answer-btn');
+    showAnswerButton.addEventListener("click", showCorrectAnswer);
+        
     currentQuestion= 0; 
     showQuestion(currentQuestion);
     ;

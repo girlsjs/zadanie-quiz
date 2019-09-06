@@ -21,7 +21,7 @@ header h1 {
 	text-align: center; 
 	text-transform: uppercase;
 }
-button.next, button.last {
+button.next, button.last, button.answer {
 	background-color: #2cbe4e;
 	border: none;
 	color: #fff;
@@ -34,8 +34,8 @@ button.next, button.last {
     padding: 10px 5px;
     text-transform: uppercase;
     width: 100%;
-
 }
+
 footer {
 	background-color: #2cbe4e;
 	color: #fff;
