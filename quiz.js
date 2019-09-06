@@ -72,3 +72,11 @@ const questions = [
       <p>${contentText}</p>
     `;
   }
+
+  function startQuiz(){
+    currentQuestion= 0; 
+    showQuestion(currentQuestion);
+  }
+  
+  startQuiz();
+
