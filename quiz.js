@@ -55,11 +55,19 @@ const questions = [
     currentQuestion += 1;
     if (currentQuestion === questions.length - 1) {
       nextButton.style.display = 'none';
+      showResult();
     } else {
       nextButton.style.display = 'block';
     }
+    
   }
-
+  const lastButton = document.createElement("BUTTON");
+    lastButton.innerHTML = "Jeszcze raz";
+    document.querySelector('div').appendChild(lastButton);
+    lastButton.classList.add("next");
+    lastButton.addEventListener('click', startQuiz);
+    lastButton.style.display = 'none';
+  
   function showResult() {
 
     let correctAnswers = 3;
@@ -71,12 +79,31 @@ const questions = [
       <p>${titleText}</p>
       <p>${contentText}</p>
     `;
+    lastButton.style.display = 'block';
+ 
   }
 
   function startQuiz(){
+     const mainElement = document.querySelector('main');
+    mainElement.innerHTML= `
+    <p>treść pytania</p>
+    <radiogroup class="answers">         
+        <label id="answer1_label"><input type="radio" id="answer1" name="answer" value="a"/>odpowiedź pierwsza</label>
+        <label id="answer2_label"><input type="radio" id="answer2" name="answer" value="b"/>odpowiedź druga</label>
+        <label id="answer3_label"></label><input type="radio" id="answer3" name="answer" value="c"/>odpowiedź trzecia</label>
+    </radiogroup>
+    `
     currentQuestion= 0; 
     showQuestion(currentQuestion);
+    nextButton.style.display = 'block';
+    lastButton.style.display = 'none';    
+    ;
   }
   
   startQuiz();
+
+  // Do ekranu końcowego (showResult) dodać przycisk ponownego rozpoczęcia quizu (“Jeszcze raz” czy “Od nowa”, “Restart”, nie mam więcej pomysłów)
+  //  i powiązać go z funkcją startQuiz
+
+
 
