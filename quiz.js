@@ -102,8 +102,4 @@ const questions = [
   
   startQuiz();
 
-  // Do ekranu końcowego (showResult) dodać przycisk ponownego rozpoczęcia quizu (“Jeszcze raz” czy “Od nowa”, “Restart”, nie mam więcej pomysłów)
-  //  i powiązać go z funkcją startQuiz
-
-
 
