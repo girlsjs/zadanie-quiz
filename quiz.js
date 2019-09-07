@@ -54,7 +54,7 @@ const questions = [
   function showNextQuestion() {
     showQuestion(currentQuestion + 1);
     currentQuestion += 1;
-    if (currentQuestion === questions.length - 1) {
+    if (currentQuestion === questions.length) {
       nextButton.style.display = 'none';
 
     } else {
@@ -97,24 +97,23 @@ function next() {
     step3.classList.add("is-active");
 
   } else if (step === 'step3') {
-    step = 'step4';
+    step = 'step4d';
     step3.classList.remove("is-active");
     step3.classList.add("is-complete");
     step4.classList.add("is-active");
 
-  } else if (step === 'step4') {
+  } else if (step === 'step4d') {
     step = 'complete';
     step4.classList.remove("is-active");
     step4.classList.add("is-complete");
 
   } else if (step === 'complete') {
-    step = 'step1';
+    // step = 'step1';
     step4.classList.remove("is-complete");
     step3.classList.remove("is-complete");
     step2.classList.remove("is-complete");
     step1.classList.remove("is-complete");
-
-    step1.classList.add("is-active");
+    // step1.classList.add("is-active");
   }
 }
 //END INFORMATION PANEL
