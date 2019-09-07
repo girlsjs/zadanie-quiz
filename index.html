@@ -13,8 +13,18 @@
   		<h1>JS Quiz App</h1>
 	</header>
 	<div class="content">
-		<div class="information-panel">
-			<p>Pytanie <label id="start">1</label> z <label id="end">4</label>, już niedługo koniec! :)</p>
+		<div id="information-panel">
+			<div class="progress">
+				<div class="progress-track"></div>
+				<div id="step1" class="progress-step">
+				</div>
+				<div id="step2" class="progress-step">
+				</div>
+				<div id="step3" class="progress-step">
+				</div>
+				<div id="step4" class="progress-step">
+				</div>
+			</div>
 		</div>
 		<main>
 	        <p>treść pytania</p>
@@ -24,7 +34,7 @@
 	                <label id="answer3_label"></label><input type="radio" id="answer3" name="answer" value="c"/>odpowiedź trzecia</label>
 	            </radiogroup>
 	    </main>
-	    <button id="next-btn" class="next">Dalej</button>
+	    <button id="next-btn" class="next" onClick=next()>Dalej</button>
 	</div>
     <footer>
     	<p>&copy; 2019 Girls.js and friends</p>
