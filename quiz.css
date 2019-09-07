@@ -42,3 +42,9 @@ footer {
 	flex-shrink: 0;
 	text-align: center;
 }
+
+.information-panel{
+	padding-top: 15px;
+	color: #03ad4c;
+	text-align: center;
+}
