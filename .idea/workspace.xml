@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9427e49b-e959-4c06-9447-b8b98d3b312c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz.css" beforeDir="false" afterPath="$PROJECT_DIR$/quiz.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/quiz.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/quiz.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="108" column="16" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
+            <state relative-caret-position="493">
+              <caret line="88" column="19" selection-start-line="88" selection-start-column="19" selection-end-line="88" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -49,10 +47,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="1368" />
     <option name="y" value="-674" />
-    <option name="width" value="1395" />
+    <option name="width" value="836" />
     <option name="height" value="1023" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -105,19 +103,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567712853857</updated>
-      <workItem from="1567712857159" duration="10304000" />
+      <workItem from="1567712857159" duration="12228000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10304000" />
+    <option name="totallyTimeSpent" value="12228000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1368" y="-674" width="1395" height="1023" extended-state="0" />
+    <frame x="1368" y="-674" width="836" height="1023" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09285188" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15789473" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
@@ -183,8 +181,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/quiz.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="108" column="16" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
+        <state relative-caret-position="493">
+          <caret line="88" column="19" selection-start-line="88" selection-start-column="19" selection-end-line="88" selection-end-column="19" />
         </state>
       </provider>
     </entry>
