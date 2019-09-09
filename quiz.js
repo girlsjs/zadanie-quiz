@@ -49,12 +49,17 @@ const questions = [
   const nextButton = document.getElementById('next-btn');
   nextButton.addEventListener("click", showNextQuestion);
   var currentQuestion = 0;
-  
+
+  const resultButton = document.getElementById('result-btn');
+  resultButton.addEventListener("click", showResult);
+  resultButton.style.display = 'none';
+
   function showNextQuestion() {
     showQuestion(currentQuestion + 1);
     currentQuestion += 1;
     if (currentQuestion === questions.length - 1) {
       nextButton.style.display = 'none';
+      resultButton.style.display = 'block';
     } else {
       nextButton.style.display = 'block';
     }
@@ -77,6 +82,6 @@ const questions = [
     currentQuestion= 0; 
     showQuestion(currentQuestion);
   }
-  
+
   startQuiz();
 
