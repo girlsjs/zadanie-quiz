@@ -61,12 +61,7 @@ const questions = [
     }
     
   }
-  const lastButton = document.createElement("BUTTON");
-    lastButton.innerHTML = "Jeszcze raz";
-    document.querySelector('div').appendChild(lastButton);
-    lastButton.classList.add("next");
-    lastButton.addEventListener('click', startQuiz);
-    lastButton.style.display = 'none';
+
   
   function showResult() {
 
@@ -78,9 +73,11 @@ const questions = [
     mainElement.innerHTML= `
       <p>${titleText}</p>
       <p>${contentText}</p>
+      <button id="last-btn" class="last">Jeszcze raz</button>
     `;
-    lastButton.style.display = 'block';
- 
+    const lastButton = document.getElementById('last-btn');
+    lastButton.addEventListener('click', startQuiz);
+
   }
 
   function startQuiz(){
@@ -88,15 +85,10 @@ const questions = [
     mainElement.innerHTML= `
     <p>treść pytania</p>
     <radiogroup class="answers">         
-        <label id="answer1_label"><input type="radio" id="answer1" name="answer" value="a"/>odpowiedź pierwsza</label>
-        <label id="answer2_label"><input type="radio" id="answer2" name="answer" value="b"/>odpowiedź druga</label>
-        <label id="answer3_label"></label><input type="radio" id="answer3" name="answer" value="c"/>odpowiedź trzecia</label>
     </radiogroup>
     `
     currentQuestion= 0; 
     showQuestion(currentQuestion);
-    nextButton.style.display = 'block';
-    lastButton.style.display = 'none';    
     ;
   }
   
