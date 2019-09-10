@@ -55,11 +55,14 @@ const questions = [
     currentQuestion += 1;
     if (currentQuestion === questions.length - 1) {
       nextButton.style.display = 'none';
+      showResult();
     } else {
       nextButton.style.display = 'block';
     }
+    
   }
 
+  
   function showResult() {
 
     let correctAnswers = 3;
@@ -70,13 +73,25 @@ const questions = [
     mainElement.innerHTML= `
       <p>${titleText}</p>
       <p>${contentText}</p>
+      <button id="last-btn" class="last">Jeszcze raz</button>
     `;
+    const lastButton = document.getElementById('last-btn');
+    lastButton.addEventListener('click', startQuiz);
+
   }
 
   function startQuiz(){
+     const mainElement = document.querySelector('main');
+    mainElement.innerHTML= `
+    <p>treść pytania</p>
+    <radiogroup class="answers">         
+    </radiogroup>
+    `
     currentQuestion= 0; 
     showQuestion(currentQuestion);
+    ;
   }
   
   startQuiz();
+
 
