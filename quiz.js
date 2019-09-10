@@ -38,6 +38,41 @@ const questions = [
     correctAnswer: "c"
   }
 ];
+// timer
+let myTimer;
+function startTimer() {
+  let start = Date.now(),
+    diff,
+    minutes,
+    seconds,
+    duration = 300,
+    display = document.querySelector('#time'),
+    displayTimeOut = document.querySelector('#time-run-out');
+
+  function timer() {
+    diff = duration - (((Date.now() - start) / 1000) | 0);
+    minutes = (diff / 60) | 0;
+    seconds = (diff % 60) | 0;
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    display.textContent = `Zostało ${minutes} : ${seconds} żeby zakończyć Quiz!`;
+
+    if (diff <= 0) {
+      clearInterval(myTimer);
+      displayTimeOut.textContent = 'Zakończył się czas';
+    }
+  }
+
+  timer();
+  myTimer = clearInterval(myTimer);
+  myTimer = setInterval(timer, 1000);
+}
+
+function stopTimer() {
+  clearInterval(myTimer);
+}
 
 // show question
 function showQuestion(i) {
@@ -65,6 +100,7 @@ function showNextQuestion() {
 
     resultButton.style.display = 'block';
     showResult();
+    stopTimer();
   } else {
     nextButton.style.display = 'block';
   }
@@ -102,13 +138,14 @@ function startQuiz() {
     <radiogroup class="answers">         
     </radiogroup>
     <button id="next-btn" class="btn">Dalej</button>
-    `
+    `;
   const nextButton = document.getElementById('next-btn');
   nextButton.addEventListener("click", showNextQuestion);
 
   currentQuestion = 0;
   showQuestion(currentQuestion);
-  ;
+  startTimer();
+
 }
 
 startQuiz();
