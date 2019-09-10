@@ -46,9 +46,7 @@ const questions = [
   }
 
   // show next question
-  const nextButton = document.getElementById('next-btn');
-  nextButton.addEventListener("click", showNextQuestion);
-  var currentQuestion = 0;
+  let currentQuestion = 0;
   
   function showNextQuestion() {
     showQuestion(currentQuestion + 1);
@@ -86,7 +84,11 @@ const questions = [
     <p>treść pytania</p>
     <radiogroup class="answers">         
     </radiogroup>
+    <button id="next-btn" class="next">Dalej</button>
     `
+    const nextButton = document.getElementById('next-btn');
+    nextButton.addEventListener("click", showNextQuestion);
+      
     currentQuestion= 0; 
     showQuestion(currentQuestion);
     ;
