@@ -21,7 +21,8 @@ header h1 {
 	text-align: center; 
 	text-transform: uppercase;
 }
-button.next, button.last {
+
+button.btn {
 	background-color: #2cbe4e;
 	border: none;
 	color: #fff;
