@@ -48,23 +48,28 @@ const questions = [
   // show next question
   const nextButton = document.getElementById('next-btn');
   nextButton.addEventListener("click", showNextQuestion);
-  var currentQuestion = 0;
+  let currentQuestion = 0;
 
   const resultButton = document.getElementById('result-btn');
   resultButton.addEventListener("click", showResult);
   resultButton.style.display = 'none';
 
+  
   function showNextQuestion() {
     showQuestion(currentQuestion + 1);
     currentQuestion += 1;
     if (currentQuestion === questions.length - 1) {
       nextButton.style.display = 'none';
+
       resultButton.style.display = 'block';
+      showResult();
     } else {
       nextButton.style.display = 'block';
     }
+    
   }
 
+  
   function showResult() {
 
     let correctAnswers = 3;
@@ -75,13 +80,29 @@ const questions = [
     mainElement.innerHTML= `
       <p>${titleText}</p>
       <p>${contentText}</p>
+      <button id="last-btn" class="last">Jeszcze raz</button>
     `;
+    const lastButton = document.getElementById('last-btn');
+    lastButton.addEventListener('click', startQuiz);
+
   }
 
   function startQuiz(){
+     const mainElement = document.querySelector('main');
+    mainElement.innerHTML= `
+    <p>treść pytania</p>
+    <radiogroup class="answers">         
+    </radiogroup>
+    <button id="next-btn" class="next">Dalej</button>
+    `
+    const nextButton = document.getElementById('next-btn');
+    nextButton.addEventListener("click", showNextQuestion);
+      
     currentQuestion= 0; 
     showQuestion(currentQuestion);
+    ;
   }
 
   startQuiz();
+
 
