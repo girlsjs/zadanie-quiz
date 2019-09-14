@@ -49,6 +49,7 @@ function showQuestion(i) {
 const nextButton = document.getElementById('next-btn');
 nextButton.addEventListener("click", showNextQuestion);
 let currentQuestion = 0;
+let correctAnswers = 0;
 
 const resultButton = document.getElementById('result-btn');
 resultButton.addEventListener("click", showResult);
@@ -56,6 +57,7 @@ resultButton.style.display = 'none';
 
 
 function showNextQuestion() {
+  verify();
   showQuestion(currentQuestion + 1);
   currentQuestion += 1;
   if (currentQuestion === questions.length - 1) {
@@ -69,10 +71,16 @@ function showNextQuestion() {
 
 }
 
+// verify currentQuestion. if it's correct increase correctAnswers counter
+function verify() {
+  let currentAnswer = document.querySelector('input[name=answer]:checked').value;
+  if (currentAnswer && questions[currentQuestion].correctAnswer === currentAnswer) {
+    correctAnswers++;
+  }
+}
 
 function showResult() {
 
-  let correctAnswers = 3;
   let titleText = 'Koniec Quizu!';
   let contentText = `Odpowiedziałaś dobrze na ${correctAnswers} z ${questions.length} pytań.`;
 
