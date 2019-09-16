@@ -41,25 +41,23 @@ const questions = [
 // timer
 let myTimer;
 function startTimer() {
-  let start = Date.now(),
-    diff,
-    minutes,
+    let minutes,
     seconds,
     duration = 300,
     display = document.querySelector('#time'),
     displayTimeOut = document.querySelector('#time-run-out');
 
   function timer() {
-    diff = duration - (((Date.now() - start) / 1000) | 0);
-    minutes = (diff / 60) | 0;
-    seconds = (diff % 60) | 0;
+    duration --;
+    minutes = (duration / 60) | 0;
+    seconds = (duration % 60) | 0;
 
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
 
     display.textContent = `Zostało ${minutes} : ${seconds} żeby zakończyć Quiz!`;
 
-    if (diff <= 0) {
+    if (duration <= 0) {
       clearInterval(myTimer);
       displayTimeOut.textContent = 'Zakończył się czas';
     }
@@ -135,7 +133,7 @@ function startQuiz() {
   const mainElement = document.querySelector('main');
   mainElement.innerHTML = `
     <p>treść pytania</p>
-    <radiogroup class="answers">         
+    <radiogroup class="answers">
     </radiogroup>
     <button id="next-btn" class="btn">Dalej</button>
     `;
@@ -149,5 +147,3 @@ function startQuiz() {
 }
 
 startQuiz();
-
-
