@@ -1,5 +1,4 @@
-const questions = [
-  {
+const questions = [{
     question: "Nazwa zmiennej nie może zaczynać się od:",
     answers: {
       a: "dolara",
@@ -9,8 +8,7 @@ const questions = [
     correctAnswer: "b"
   },
   {
-    question:
-      "function square(number) {\r\n return number * number; \r\n } \r\nto przykład:",
+    question: "function square(number) {\r\n return number * number; \r\n } \r\nto przykład:",
     answers: {
       a: "deklaracji funkcji",
       b: "wywołania funkcji",
@@ -19,8 +17,7 @@ const questions = [
     correctAnswer: "a"
   },
   {
-    question:
-      "Który operator porównuje dwa operandy z uwzględnieniem ich typu?",
+    question: "Który operator porównuje dwa operandy z uwzględnieniem ich typu?",
     answers: {
       a: "==",
       b: "!=",
@@ -76,6 +73,18 @@ function stopTimer() {
 function showQuestion(i) {
   let paragraph = document.querySelector('main p');
   paragraph.textContent = questions[i].question;
+  showAnswers(i);
+}
+
+//show answers
+function showAnswers(questionIndex) {
+  const q = questions[questionIndex];
+  const option1 = document.getElementById('answer1_label');
+  const option2 = document.getElementById('answer2_label');
+  const option3 = document.getElementById('answer3_label');
+  option1.innerHTML = `<input type = "radio" id = "answer1" name = "answer" value = "a" > </input> ${q.answers.a}`;
+  option2.innerHTML = `<input type = "radio" id = "answer2" name = "answer" value = "b" > </input> ${q.answers.b}`;
+  option3.innerHTML = `<input type = "radio" id = "answer3" name = "answer" value = "c" > </input> ${q.answers.c}`;
 }
 
 // show next question
@@ -132,8 +141,12 @@ function showResult() {
 function startQuiz() {
   const mainElement = document.querySelector('main');
   mainElement.innerHTML = `
-    <p>treść pytania</p>
-    <radiogroup class="answers">
+
+  <p>treść pytania</p>
+    <radiogroup class="answers">   
+      <label id="answer1_label"><input type="radio" id="answer1" name="answer" value="a"/>odpowiedź pierwsza</label>
+      <label id="answer2_label"><input type="radio" id="answer2" name="answer" value="b"/>odpowiedź druga</label>
+      <label id="answer3_label"><input type="radio" id="answer3" name="answer" value="c"/>odpowiedź trzecia</label>      
     </radiogroup>
     <button id="next-btn" class="btn">Dalej</button>
     `;
@@ -147,3 +160,4 @@ function startQuiz() {
 }
 
 startQuiz();
+
