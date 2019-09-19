@@ -35,6 +35,23 @@ const questions = [{
     correctAnswer: "c"
   }
 ];
+
+// show next question
+const nextButton = document.getElementById('next-btn');
+nextButton.addEventListener("click", showNextQuestion);
+let currentQuestion = 0;
+let correctAnswers = 0;
+
+// show result
+const resultButton = document.getElementById('result-btn');
+resultButton.addEventListener("click", showResult);
+resultButton.style.display = 'none';
+
+// start quiz
+const lastButton = document.getElementById('last-btn');
+lastButton.addEventListener('click', startQuiz);
+lastButton.style.display = 'none';
+
 // timer
 let myTimer;
 function startTimer() {
@@ -87,31 +104,15 @@ function showAnswers(questionIndex) {
   option3.innerHTML = `<input type = "radio" id = "answer3" name = "answer" value = "c" > </input> ${q.answers.c}`;
 }
 
-// show next question
-const nextButton = document.getElementById('next-btn');
-nextButton.addEventListener("click", showNextQuestion);
-let currentQuestion = 0;
-let correctAnswers = 0;
-
-const resultButton = document.getElementById('result-btn');
-resultButton.addEventListener("click", showResult);
-resultButton.style.display = 'none';
-
-
 function showNextQuestion() {
   verify();
-  showQuestion(currentQuestion + 1);
   currentQuestion += 1;
+  showQuestion(currentQuestion);
+
   if (currentQuestion === questions.length - 1) {
     nextButton.style.display = 'none';
-
     resultButton.style.display = 'block';
-    showResult();
-    stopTimer();
-  } else {
-    nextButton.style.display = 'block';
   }
-
 }
 
 // verify currentQuestion. if it's correct increase correctAnswers counter
@@ -123,7 +124,6 @@ function verify() {
 }
 
 function showResult() {
-
   let titleText = 'Koniec Quizu!';
   let contentText = `Odpowiedziałaś dobrze na ${correctAnswers} z ${questions.length} pytań.`;
 
@@ -131,32 +131,31 @@ function showResult() {
   mainElement.innerHTML = `
       <p>${titleText}</p>
       <p>${contentText}</p>
-      <button id="last-btn" class="btn">Jeszcze raz</button>
     `;
-  const lastButton = document.getElementById('last-btn');
-  lastButton.addEventListener('click', startQuiz);
 
+  resultButton.style.display = 'none';
+  lastButton.style.display = 'block';
+  stopTimer();
 }
 
 function startQuiz() {
+
   const mainElement = document.querySelector('main');
   mainElement.innerHTML = `
 
   <p>treść pytania</p>
-    <radiogroup class="answers">   
-      <label id="answer1_label"><input type="radio" id="answer1" name="answer" value="a"/>odpowiedź pierwsza</label>
-      <label id="answer2_label"><input type="radio" id="answer2" name="answer" value="b"/>odpowiedź druga</label>
-      <label id="answer3_label"><input type="radio" id="answer3" name="answer" value="c"/>odpowiedź trzecia</label>      
-    </radiogroup>
-    <button id="next-btn" class="btn">Dalej</button>
-    `;
-  const nextButton = document.getElementById('next-btn');
-  nextButton.addEventListener("click", showNextQuestion);
+  <radiogroup class="answers">
+    <label id="answer1_label"><input type="radio" id="answer1" name="answer" value="a"/>odpowiedź pierwsza</label>
+    <label id="answer2_label"><input type="radio" id="answer2" name="answer" value="b"/>odpowiedź druga</label>
+    <label id="answer3_label"><input type="radio" id="answer3" name="answer" value="c"/>odpowiedź trzecia</label>      
+  </radiogroup>
+  `;
 
   currentQuestion = 0;
+  lastButton.style.display = 'none';
+  nextButton.style.display = 'block';
   showQuestion(currentQuestion);
   startTimer();
-
 }
 
 startQuiz();
