@@ -29,13 +29,19 @@ button.btn {
 	cursor: pointer;
 	display: block;
 	font-size: 16px;
-    margin: 40px auto;
-    max-width: 149px;
-    outline: none;
-    padding: 10px 5px;
-    text-transform: uppercase;
-    width: 100%;
+  margin: 40px auto;
+  max-width: 149px;
+  outline: none;
+  padding: 10px 5px;
+  text-transform: uppercase;
+  width: 100%;
 
+}
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 footer {
 	background-color: #2cbe4e;

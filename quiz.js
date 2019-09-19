@@ -35,6 +35,39 @@ const questions = [{
     correctAnswer: "c"
   }
 ];
+// timer
+let myTimer;
+function startTimer() {
+    let minutes,
+    seconds,
+    duration = 300,
+    display = document.querySelector('#time'),
+    displayTimeOut = document.querySelector('#time-run-out');
+
+  function timer() {
+    duration --;
+    minutes = (duration / 60) | 0;
+    seconds = (duration % 60) | 0;
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    display.textContent = `Zostało ${minutes} : ${seconds} żeby zakończyć Quiz!`;
+
+    if (duration <= 0) {
+      clearInterval(myTimer);
+      displayTimeOut.textContent = 'Zakończył się czas';
+    }
+  }
+
+  timer();
+  myTimer = clearInterval(myTimer);
+  myTimer = setInterval(timer, 1000);
+}
+
+function stopTimer() {
+  clearInterval(myTimer);
+}
 
 // show question
 function showQuestion(i) {
@@ -74,6 +107,7 @@ function showNextQuestion() {
 
     resultButton.style.display = 'block';
     showResult();
+    stopTimer();
   } else {
     nextButton.style.display = 'block';
   }
@@ -107,6 +141,7 @@ function showResult() {
 function startQuiz() {
   const mainElement = document.querySelector('main');
   mainElement.innerHTML = `
+
   <p>treść pytania</p>
     <radiogroup class="answers">   
       <label id="answer1_label"><input type="radio" id="answer1" name="answer" value="a"/>odpowiedź pierwsza</label>
@@ -114,12 +149,15 @@ function startQuiz() {
       <label id="answer3_label"><input type="radio" id="answer3" name="answer" value="c"/>odpowiedź trzecia</label>      
     </radiogroup>
     <button id="next-btn" class="btn">Dalej</button>
-    `
+    `;
   const nextButton = document.getElementById('next-btn');
   nextButton.addEventListener("click", showNextQuestion);
 
   currentQuestion = 0;
-  showQuestion(currentQuestion);;
+  showQuestion(currentQuestion);
+  startTimer();
+
 }
 
 startQuiz();
+
