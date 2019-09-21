@@ -1,40 +1,47 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=latin-ext');
-html, body { 
+html, body {
 	height: 100%;
 }
 body {
-  display: flex;
-  flex-direction: column;
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
 }
 .content {
-  flex: 1 0 auto;
+	flex: 1 0 auto;
 }
 main {
 	padding: 30px;
 }
-header h1 { 
-	color: #2cbe4e; 
-	font-size: 30px; 
-	font-weight: 500; 
-	text-align: center; 
+header h1 {
+	color: #2cbe4e;
+	font-size: 30px;
+	font-weight: 500;
+	text-align: center;
 	text-transform: uppercase;
 }
-button.next {
+
+button.btn {
 	background-color: #2cbe4e;
 	border: none;
 	color: #fff;
 	cursor: pointer;
 	display: block;
 	font-size: 16px;
-    margin: 40px auto;
-    max-width: 149px;
-    outline: none;
-    padding: 10px 5px;
-    text-transform: uppercase;
-    width: 100%;
+	margin: 40px auto;
+	max-width: 149px;
+	outline: none;
+	padding: 10px 5px;
+	text-transform: uppercase;
+	width: 100%;
 
+}
+.timer-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 footer {
 	background-color: #2cbe4e;
