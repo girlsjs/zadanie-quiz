@@ -124,6 +124,8 @@ function verify() {
 }
 
 function showResult() {
+  verify();
+
   let titleText = 'Koniec Quizu!';
   let contentText = `Odpowiedziałaś dobrze na ${correctAnswers} z ${questions.length} pytań.`;
 
