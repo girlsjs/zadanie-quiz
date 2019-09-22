@@ -141,7 +141,7 @@ function showResult() {
 }
 
 function startQuiz() {
-
+  correctAnswers = 0;
   const mainElement = document.querySelector('main');
   mainElement.innerHTML = `
 
