@@ -1,39 +1,39 @@
 const questions = [{
-    question: "Nazwa zmiennej nie może zaczynać się od:",
-    answers: {
-      a: "dolara",
-      b: "cyfry",
-      c: "dużej litery"
-    },
-    correctAnswer: "b"
+  question: "Nazwa zmiennej nie może zaczynać się od:",
+  answers: {
+    a: "dolara",
+    b: "cyfry",
+    c: "dużej litery"
   },
-  {
-    question: "function square(number) {\r\n return number * number; \r\n } \r\nto przykład:",
-    answers: {
-      a: "deklaracji funkcji",
-      b: "wywołania funkcji",
-      c: "domknięcia funkcji"
-    },
-    correctAnswer: "a"
+  correctAnswer: "b"
+},
+{
+  question: "function square(number) {\r\n return number * number; \r\n } \r\nto przykład:",
+  answers: {
+    a: "deklaracji funkcji",
+    b: "wywołania funkcji",
+    c: "domknięcia funkcji"
   },
-  {
-    question: "Który operator porównuje dwa operandy z uwzględnieniem ich typu?",
-    answers: {
-      a: "==",
-      b: "!=",
-      c: "==="
-    },
-    correctAnswer: "c"
+  correctAnswer: "a"
+},
+{
+  question: "Który operator porównuje dwa operandy z uwzględnieniem ich typu?",
+  answers: {
+    a: "==",
+    b: "!=",
+    c: "==="
   },
-  {
-    question: "Inna nazwa języka JavaScript to:",
-    answers: {
-      a: "ActionScript",
-      b: "Java",
-      c: "ECMAScript"
-    },
-    correctAnswer: "c"
-  }
+  correctAnswer: "c"
+},
+{
+  question: "Inna nazwa języka JavaScript to:",
+  answers: {
+    a: "ActionScript",
+    b: "Java",
+    c: "ECMAScript"
+  },
+  correctAnswer: "c"
+}
 ];
 
 // show next question
@@ -52,17 +52,20 @@ const lastButton = document.getElementById('last-btn');
 lastButton.addEventListener('click', startQuiz);
 lastButton.style.display = 'none';
 
+// show correct answer
+const showAnswerButton = document.getElementById('answer-btn');
+showAnswerButton.addEventListener('click', showCorrectAnswer);
 // timer
 let myTimer;
 function startTimer() {
-    let minutes,
+  let minutes,
     seconds,
     duration = 300,
     display = document.querySelector('#time'),
     displayTimeOut = document.querySelector('#time-run-out');
 
   function timer() {
-    duration --;
+    duration--;
     minutes = (duration / 60) | 0;
     seconds = (duration % 60) | 0;
 
@@ -109,7 +112,7 @@ function showNextQuestion() {
   currentQuestion += 1;
   showQuestion(currentQuestion);
   setAnswerHint('');
-    showAnswerButton.style.display = 'block';
+  showAnswerButton.style.display = 'block';
 
   if (currentQuestion === questions.length - 1) {
     nextButton.style.display = 'none';
@@ -117,16 +120,18 @@ function showNextQuestion() {
   }
 }
 
-  // show answer for current question
-  function showCorrectAnswer() {
-    let correctAnswer = questions[currentQuestion].correctAnswer;
-    setAnswerHint(correctAnswer);
-    showAnswerButton.style.display = 'none';
-  }
+// show answer for current question
+function showCorrectAnswer() {
+  let correctAnswerLetter = questions[currentQuestion].correctAnswer
+  let correctAnswer = questions[currentQuestion].answers[correctAnswerLetter];
+  setAnswerHint(correctAnswer);
+  showAnswerButton.style.display = 'none';
+}
 
-  function setAnswerHint(answerText) {
-    let answerParagraph = document.querySelectorAll('main p')[1];
-    answerParagraph.textContent = answerText;
+function setAnswerHint(answerText) {
+  let answerParagraph = document.querySelectorAll('main p')[1];
+  answerParagraph.textContent = answerText;
+}
 
 // verify currentQuestion. if it's correct increase correctAnswers counter
 function verify() {
@@ -165,6 +170,7 @@ function startQuiz() {
     <label id="answer2_label"><input type="radio" id="answer2" name="answer" value="b"/>odpowiedź druga</label>
     <label id="answer3_label"><input type="radio" id="answer3" name="answer" value="c"/>odpowiedź trzecia</label>      
   </radiogroup>
+  <p></p>
   `;
 
   currentQuestion = 0;
