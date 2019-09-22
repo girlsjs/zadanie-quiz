@@ -108,6 +108,8 @@ function showNextQuestion() {
   verify();
   currentQuestion += 1;
   showQuestion(currentQuestion);
+  setAnswerHint('');
+    showAnswerButton.style.display = 'block';
 
   if (currentQuestion === questions.length - 1) {
     nextButton.style.display = 'none';
@@ -115,11 +117,23 @@ function showNextQuestion() {
   }
 }
 
+  // show answer for current question
+  function showCorrectAnswer() {
+    let correctAnswer = questions[currentQuestion].correctAnswer;
+    setAnswerHint(correctAnswer);
+    showAnswerButton.style.display = 'none';
+  }
+
+  function setAnswerHint(answerText) {
+    let answerParagraph = document.querySelectorAll('main p')[1];
+    answerParagraph.textContent = answerText;
+
 // verify currentQuestion. if it's correct increase correctAnswers counter
 function verify() {
   let currentAnswer = document.querySelector('input[name=answer]:checked').value;
   if (currentAnswer && questions[currentQuestion].correctAnswer === currentAnswer) {
     correctAnswers++;
+
   }
 }
 
