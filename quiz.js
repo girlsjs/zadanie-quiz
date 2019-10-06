@@ -7,6 +7,7 @@ const questions = [{
   },
   correctAnswer: "b"
 },
+<<<<<<< HEAD
   {
     question: "function square(number) {\r\n return number * number; \r\n } \r\nto przykład:",
     answers: {
@@ -35,6 +36,7 @@ const questions = [{
     correctAnswer: "c"
   }
 ];
+=======
 {
   question: "function square(number) {\r\n return number * number; \r\n } \r\nto przykład:",
   answers: {
@@ -96,6 +98,7 @@ function startTimer() {
 
   function timer() {
     duration --;
+=======
     seconds,
     duration = 300,
     display = document.querySelector('#time'),
@@ -103,6 +106,7 @@ function startTimer() {
 
   function timer() {
     duration--;
+>>>>>>> 3628121db843105828d784158d1ca57a2a369c45
     minutes = (duration / 60) | 0;
     seconds = (duration % 60) | 0;
 
@@ -113,7 +117,11 @@ function startTimer() {
 
     if (duration <= 0) {
       clearInterval(myTimer);
+<<<<<<< HEAD
       displayTimeOut.textContent = 'Zakończył się czas';
+=======
+      displayTimeOut.textContent = 'Zakończył się czas';
+>>>>>>> 3628121db843105828d784158d1ca57a2a369c45
     }
   }
 
@@ -132,6 +140,7 @@ function showQuestion(i) {
   paragraph.textContent = questions[i].question;
   showAnswers(i);
 }
+<<<<<<< HEAD
 
 //show answers
 function showAnswers(questionIndex) {
@@ -167,6 +176,7 @@ function showNextQuestion() {
     stopTimer();
   } else {
     nextButton.style.display = 'block';
+=======
 
 //show answers
 function showAnswers(questionIndex) {
@@ -189,6 +199,7 @@ function showNextQuestion() {
   if (currentQuestion === questions.length - 1) {
     nextButton.style.display = 'none';
     resultButton.style.display = 'block';
+>>>>>>> 3628121db843105828d784158d1ca57a2a369c45
   }
 }
 
@@ -211,6 +222,7 @@ function verify() {
   if (currentAnswer && questions[currentQuestion].correctAnswer === currentAnswer) {
     correctAnswers++;
 
+<<<<<<< HEAD
 }
 
 // verify currentQuestion. if it's correct increase correctAnswers counter
@@ -218,11 +230,16 @@ function verify() {
   let currentAnswer = document.querySelector('input[name=answer]:checked').value;
   if (currentAnswer && questions[currentQuestion].correctAnswer === currentAnswer) {
     correctAnswers++;
+=======
+>>>>>>> 3628121db843105828d784158d1ca57a2a369c45
   }
 }
 
 function showResult() {
+<<<<<<< HEAD
+=======
   verify();
+>>>>>>> 3628121db843105828d784158d1ca57a2a369c45
 
   let titleText = 'Koniec Quizu!';
   let contentText = `Odpowiedziałaś dobrze na ${correctAnswers} z ${questions.length} pytań.`;
@@ -283,10 +300,12 @@ function startQuiz() {
   nextButton.style.display = 'block';
   showQuestion(currentQuestion);
   startTimer();
+>>>>>>> 3628121db843105828d784158d1ca57a2a369c45
 }
 
 startQuiz();
 
+<<<<<<< HEAD
 
 
   //INFORMATION PANEL
@@ -330,4 +349,6 @@ function next() {
     // step1.classList.add("is-active");
   }
 }
-//END INFORMATION PANEL//END INFORMATION PANEL
+//END INFORMATION PANEL
+=======
+>>>>>>> 3628121db843105828d784158d1ca57a2a369c45

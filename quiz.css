@@ -30,16 +30,28 @@ button.btn {
 	cursor: pointer;
 	display: block;
 	font-size: 16px;
+<<<<<<< HEAD
 	margin: 40px auto;
 	max-width: 149px;
 	outline: none;
 	padding: 10px 5px;
 	text-transform: uppercase;
 	width: 100%;
+=======
+    margin: 40px auto;
+    max-width: 149px;
+    outline: none;
+    padding: 10px 5px;
+    text-transform: uppercase;
+    width: 100%;
+}
+>>>>>>> 3628121db843105828d784158d1ca57a2a369c45
 
 #last-btn, #result-btn {
 	display: none;
 }
+<<<<<<< HEAD
+=======
 
 >>>>>>> 3628121db843105828d784158d1ca57a2a369c45
 .timer-container {
@@ -48,6 +60,10 @@ button.btn {
 	justify-content: center;
 	align-items: center;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3628121db843105828d784158d1ca57a2a369c45
 footer {
 	background-color: #2cbe4e;
 	color: #fff;
