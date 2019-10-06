@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=latin-ext');
-html, body {
+html, body { 
 	height: 100%;
 }
 body {
@@ -15,11 +15,11 @@ main {
 	padding: 30px;
 	min-height: 100px;
 }
-header h1 {
-	color: #2cbe4e;
-	font-size: 30px;
-	font-weight: 500;
-	text-align: center;
+header h1 { 
+	color: #2cbe4e; 
+	font-size: 30px; 
+	font-weight: 500; 
+	text-align: center; 
 	text-transform: uppercase;
 }
 
@@ -30,14 +30,6 @@ button.btn {
 	cursor: pointer;
 	display: block;
 	font-size: 16px;
-<<<<<<< HEAD
-	margin: 40px auto;
-	max-width: 149px;
-	outline: none;
-	padding: 10px 5px;
-	text-transform: uppercase;
-	width: 100%;
-=======
     margin: 40px auto;
     max-width: 149px;
     outline: none;
@@ -45,116 +37,21 @@ button.btn {
     text-transform: uppercase;
     width: 100%;
 }
->>>>>>> 3628121db843105828d784158d1ca57a2a369c45
 
 #last-btn, #result-btn {
 	display: none;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 3628121db843105828d784158d1ca57a2a369c45
 .timer-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 3628121db843105828d784158d1ca57a2a369c45
 footer {
 	background-color: #2cbe4e;
 	color: #fff;
 	flex-shrink: 0;
 	text-align: center;
 }
-
-/* INFORMATION PANEL*/
-
-.progress {
-	position: relative;
-	display: flex;
-}
-.progress .progress-track {
-	position: absolute;
-	top: 10px;
-	width: 100%;
-	height: 5px;
-	background-color: rgba(176, 251,185, 0.4);
-	z-index: -1;
-}
-.progress .progress-step {
-	position: relative;
-	width: 100%;
-	font-size: 12px;
-	text-align: center;
-}
-.progress .progress-step:last-child:after {
-	display: none;
-}
-.progress .progress-step:before {
-	content: url("check-mark-10-16.png");
-	display: flex;
-	margin: 0 auto;
-	width: 16px;
-	height: 16px;
-	background: rgba(176, 251,185, 0.4);
-	border: 4px solid rgba(176, 251,185, 0.4);
-	border-radius: 100%;
-	color: #fff;
-}
-.progress .progress-step:after {
-	content: url("check-mark-10-16.png");
-	position: absolute;
-	left: 50%;
-	width: 0%;
-	transition: width 1s ease-in;
-	height: 5px;
-	background: #6bd59e;
-	z-index: -1;
-	margin-top: -13px;
-}
-.progress .progress-step.is-active {
-	color: #b0fee1;
-}
-.progress .progress-step.is-active:before {
-	border: 4px solid #8fee9f;
-	background-color: #8fee9f;
-	animation: pulse 2s infinite;
-}
-.progress .progress-step.is-complete {
-	color: #0bea8c;
-}
-.progress .progress-step.is-complete:before {
-	font-size: 10px;
-	color: #2cbe4e;
-	background: #2cbe4e;
-	border: 4px solid transparent;
-}
-.progress .progress-step.is-complete:after {
-	animation: nextStep 1s;
-	animation-fill-mode: forwards;
-}
-
-@keyframes pulse {
-	0% {
-		box-shadow: 0 0 0 0 rgba(176, 251,185, 0.4);
-	}
-	70% {
-		box-shadow: 0 0 0 10px rgba(176, 251,185, 0.2);
-	}
-	100% {
-		box-shadow: 0 0 0 0 rgba(176, 251,185, 0);
-	}
-}
-@keyframes nextStep {
-	0% {
-		width: 0%;
-	}
-	100% {
-		width: 100%;
-	}
-}
-/* END INFORMATION PANEL*/
