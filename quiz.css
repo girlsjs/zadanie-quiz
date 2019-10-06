@@ -13,6 +13,7 @@ body {
 }
 main {
 	padding: 30px;
+	min-height: 100px;
 }
 header h1 {
 	color: #2cbe4e;
@@ -36,7 +37,11 @@ button.btn {
 	text-transform: uppercase;
 	width: 100%;
 
+#last-btn, #result-btn {
+	display: none;
 }
+
+>>>>>>> 3628121db843105828d784158d1ca57a2a369c45
 .timer-container {
 	display: flex;
 	flex-direction: column;
