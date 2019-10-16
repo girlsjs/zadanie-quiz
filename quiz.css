@@ -22,7 +22,7 @@ main {
 }
 
 header h1 {
-	width: 1200px;
+	max-width: 1200px;
 	margin: 20px auto;
 	background-color: #2cbe4e;
 	color: white;
