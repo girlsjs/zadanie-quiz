@@ -55,14 +55,15 @@ lastButton.style.display = 'none';
 // show correct answer
 const showAnswerButton = document.getElementById('answer-btn');
 showAnswerButton.addEventListener('click', showCorrectAnswer);
+
 // timer
-let myTimer;
+let myTimer,
+  timerDisplay = document.querySelector('#time');
+
 function startTimer() {
   let minutes,
     seconds,
-    duration = 300,
-    display = document.querySelector('#time'),
-    displayTimeOut = document.querySelector('#time-run-out');
+    duration = 300;
 
   function timer() {
     duration--;
@@ -72,11 +73,11 @@ function startTimer() {
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
 
-    display.textContent = `Zostało ${minutes} : ${seconds} żeby zakończyć Quiz!`;
+    timerDisplay.textContent = `Zostało ${minutes} : ${seconds} żeby zakończyć Quiz!`;
 
     if (duration <= 0) {
       clearInterval(myTimer);
-      displayTimeOut.textContent = 'Zakończył się czas';
+      showResultOnTimeOut();
     }
   }
 
@@ -122,7 +123,7 @@ function showNextQuestion() {
 
 // show answer for current question
 function showCorrectAnswer() {
-  let correctAnswerLetter = questions[currentQuestion].correctAnswer
+  let correctAnswerLetter = questions[currentQuestion].correctAnswer;
   let correctAnswer = questions[currentQuestion].answers[correctAnswerLetter];
   setAnswerHint(correctAnswer);
   showAnswerButton.style.display = 'none';
@@ -157,10 +158,14 @@ function showResult() {
   resultButton.style.display = 'none';
   lastButton.style.display = 'block';
   stopTimer();
+  timerDisplay.style.display = 'none';
+  showAnswerButton.style.display = 'none';
 }
 
 function startQuiz() {
   correctAnswers = 0;
+  timerDisplay.style.display = 'block';
+  showAnswerButton.style.display = 'block';
   const mainElement = document.querySelector('main');
   mainElement.innerHTML = `
 
@@ -178,6 +183,23 @@ function startQuiz() {
   nextButton.style.display = 'block';
   showQuestion(currentQuestion);
   startTimer();
+}
+
+function showResultOnTimeOut() {
+  let titleText = 'Skończył się czas. Koniec Quizu!';
+  let contentText = `Odpowiedziałaś dobrze na ${correctAnswers} z ${questions.length} pytań.`;
+
+  const mainElement = document.querySelector('main');
+  mainElement.innerHTML = `
+      <p>${titleText}</p>
+      <p>${contentText}</p>
+    `;
+
+  nextButton.style.display = 'none';
+  resultButton.style.display = 'none';
+  lastButton.style.display = 'block';
+  showAnswerButton.style.display = 'none';
+  timerDisplay.style.display = 'none';
 }
 
 startQuiz();
