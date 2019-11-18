@@ -126,6 +126,14 @@ function showCorrectAnswer() {
   let correctAnswerLetter = questions[currentQuestion].correctAnswer;
   let correctAnswer = questions[currentQuestion].answers[correctAnswerLetter];
   setAnswerHint(correctAnswer);
+  let radioButtons = document.getElementsByName("answer");
+  [...radioButtons].map( item => {
+     if (item.value === correctAnswerLetter ) {
+       item.checked = true;
+       correctAnswers--;
+     }
+   });
+
   showAnswerButton.style.display = 'none';
 }
 
@@ -173,7 +181,7 @@ function startQuiz() {
   <radiogroup class="answers">
     <label id="answer1_label"><input type="radio" id="answer1" name="answer" value="a"/>odpowiedź pierwsza</label>
     <label id="answer2_label"><input type="radio" id="answer2" name="answer" value="b"/>odpowiedź druga</label>
-    <label id="answer3_label"><input type="radio" id="answer3" name="answer" value="c"/>odpowiedź trzecia</label>      
+    <label id="answer3_label"><input type="radio" id="answer3" name="answer" value="c"/>odpowiedź trzecia</label>
   </radiogroup>
   <p></p>
   `;
@@ -203,4 +211,3 @@ function showResultOnTimeOut() {
 }
 
 startQuiz();
-
