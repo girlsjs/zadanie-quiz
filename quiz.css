@@ -85,6 +85,7 @@ footer {
 	border-top: 2px solid #2cbe4e;
 	flex-shrink: 0;
 	text-align: center;
+  width: 100%;
 }
 /* INFORMATION PANEL*/
 
