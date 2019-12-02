@@ -103,16 +103,20 @@ function showAnswers(questionIndex) {
   const option1 = document.getElementById('answer1_label');
   const option2 = document.getElementById('answer2_label');
   const option3 = document.getElementById('answer3_label');
-  option1.innerHTML = `<input type = "radio" id = "answer1" name = "answer" value = "a" > </input> ${q.answers.a}`;
-  option2.innerHTML = `<input type = "radio" id = "answer2" name = "answer" value = "b" > </input> ${q.answers.b}`;
-  option3.innerHTML = `<input type = "radio" id = "answer3" name = "answer" value = "c" > </input> ${q.answers.c}`;
+  option1.innerHTML = `<input type = "radio" id = "answer1" name = "answer" value = "a" >
+                      </input> <span class="label-text">${q.answers.a}</span>
+                      <span class="checkmark"></span>`;
+  option2.innerHTML = `<input type = "radio" id = "answer2" name = "answer" value = "b" > </input>
+                      <span class="label-text">${q.answers.b} </span>
+                      <span class="checkmark"></span>`;
+  option3.innerHTML = `<input type = "radio" id = "answer3" name = "answer" value = "c" > </input>
+                      <span class="label-text">${q.answers.c} </span><span class="checkmark"></span>`;
 }
 
 function showNextQuestion() {
   verify();
   currentQuestion += 1;
   showQuestion(currentQuestion);
-  setAnswerHint('');
   showAnswerButton.style.display = 'block';
 
   if (currentQuestion === questions.length - 1) {
@@ -124,14 +128,15 @@ function showNextQuestion() {
 // show answer for current question
 function showCorrectAnswer() {
   let correctAnswerLetter = questions[currentQuestion].correctAnswer;
-  let correctAnswer = questions[currentQuestion].answers[correctAnswerLetter];
-  setAnswerHint(correctAnswer);
-  showAnswerButton.style.display = 'none';
-}
+  let radioButtons = document.getElementsByName("answer");
+  [...radioButtons].map( item => {
+     if (item.value === correctAnswerLetter ) {
+       item.checked = true;
+       correctAnswers--;
+     }
+   });
 
-function setAnswerHint(answerText) {
-  let answerParagraph = document.querySelectorAll('main p')[1];
-  answerParagraph.textContent = answerText;
+  showAnswerButton.style.display = 'none';
 }
 
 // verify currentQuestion. if it's correct increase correctAnswers counter
@@ -173,7 +178,7 @@ function startQuiz() {
   <radiogroup class="answers">
     <label id="answer1_label"><input type="radio" id="answer1" name="answer" value="a"/>odpowiedź pierwsza</label>
     <label id="answer2_label"><input type="radio" id="answer2" name="answer" value="b"/>odpowiedź druga</label>
-    <label id="answer3_label"><input type="radio" id="answer3" name="answer" value="c"/>odpowiedź trzecia</label>      
+    <label id="answer3_label"><input type="radio" id="answer3" name="answer" value="c"/>odpowiedź trzecia</label>
   </radiogroup>
   <p></p>
   `;
@@ -203,4 +208,3 @@ function showResultOnTimeOut() {
 }
 
 startQuiz();
-
