@@ -150,21 +150,10 @@ function verify() {
 
 function showResult() {
   verify();
-
   let titleText = 'Koniec Quizu!';
-  let contentText = `Odpowiedziałaś dobrze na ${correctAnswers} z ${questions.length} pytań.`;
-
-  const mainElement = document.querySelector('main');
-  mainElement.innerHTML = `
-      <p>${titleText}</p>
-      <p>${contentText}</p>
-    `;
-
-  resultButton.style.display = 'none';
-  lastButton.style.display = 'block';
+  renderResultText(titleText);
+  manageButtonsDisplay();
   stopTimer();
-  timerDisplay.style.display = 'none';
-  showAnswerButton.style.display = 'none';
 }
 
 function startQuiz() {
@@ -192,6 +181,12 @@ function startQuiz() {
 
 function showResultOnTimeOut() {
   let titleText = 'Skończył się czas. Koniec Quizu!';
+  renderResultText(titleText);
+  manageButtonsDisplay();
+  nextButton.style.display = 'none';
+}
+
+function renderResultText(titleText) {
   let contentText = `Odpowiedziałaś dobrze na ${correctAnswers} z ${questions.length} pytań.`;
 
   const mainElement = document.querySelector('main');
@@ -199,8 +194,9 @@ function showResultOnTimeOut() {
       <p>${titleText}</p>
       <p>${contentText}</p>
     `;
+}
 
-  nextButton.style.display = 'none';
+function manageButtonsDisplay() {
   resultButton.style.display = 'none';
   lastButton.style.display = 'block';
   showAnswerButton.style.display = 'none';
