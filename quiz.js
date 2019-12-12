@@ -183,7 +183,6 @@ function showResultOnTimeOut() {
   let titleText = 'Skończył się czas. Koniec Quizu!';
   renderResultText(titleText);
   manageButtonsDisplay();
-  nextButton.style.display = 'none';
 }
 
 function renderResultText(titleText) {
@@ -201,6 +200,7 @@ function manageButtonsDisplay() {
   lastButton.style.display = 'block';
   showAnswerButton.style.display = 'none';
   timerDisplay.style.display = 'none';
+  nextButton.style.display = 'none';
 }
 
 startQuiz();
