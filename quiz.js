@@ -44,7 +44,9 @@ let correctAnswers = 0;
 
 // show result
 const resultButton = document.getElementById('result-btn');
-resultButton.addEventListener("click", showResult);
+resultButton.addEventListener("click", function() {
+  showResult('Koniec Quizu!', true)
+}, false);
 resultButton.style.display = 'none';
 
 // start quiz
@@ -77,7 +79,7 @@ function startTimer() {
 
     if (duration <= 0) {
       clearInterval(myTimer);
-      showResultOnTimeOut();
+      showResult('Skończył się czas. Koniec Quizu!', false);
     }
   }
 
@@ -148,12 +150,14 @@ function verify() {
   }
 }
 
-function showResult() {
-  verify();
-  let titleText = 'Koniec Quizu!';
+function showResult(titleText, callVerify) {
+  if (callVerify) {
+    verify();
+    stopTimer();
+  }
+
   renderResultText(titleText);
   manageButtonsDisplay();
-  stopTimer();
 }
 
 function startQuiz() {
@@ -177,12 +181,6 @@ function startQuiz() {
   nextButton.style.display = 'block';
   showQuestion(currentQuestion);
   startTimer();
-}
-
-function showResultOnTimeOut() {
-  let titleText = 'Skończył się czas. Koniec Quizu!';
-  renderResultText(titleText);
-  manageButtonsDisplay();
 }
 
 function renderResultText(titleText) {
