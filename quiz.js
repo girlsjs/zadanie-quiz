@@ -44,7 +44,9 @@ let correctAnswers = 0;
 
 // show result
 const resultButton = document.getElementById('result-btn');
-resultButton.addEventListener("click", showResult);
+resultButton.addEventListener("click", function() {
+  showResult('Koniec Quizu!', true)
+}, false);
 resultButton.style.display = 'none';
 
 // start quiz
@@ -77,7 +79,7 @@ function startTimer() {
 
     if (duration <= 0) {
       clearInterval(myTimer);
-      showResultOnTimeOut();
+      showResult('Skończył się czas. Koniec Quizu!', false);
     }
   }
 
@@ -148,23 +150,14 @@ function verify() {
   }
 }
 
-function showResult() {
-  verify();
+function showResult(titleText, callVerify) {
+  if (callVerify) {
+    verify();
+    stopTimer();
+  }
 
-  let titleText = 'Koniec Quizu!';
-  let contentText = `Odpowiedziałaś dobrze na ${correctAnswers} z ${questions.length} pytań.`;
-
-  const mainElement = document.querySelector('main');
-  mainElement.innerHTML = `
-      <p>${titleText}</p>
-      <p>${contentText}</p>
-    `;
-
-  resultButton.style.display = 'none';
-  lastButton.style.display = 'block';
-  stopTimer();
-  timerDisplay.style.display = 'none';
-  showAnswerButton.style.display = 'none';
+  renderResultText(titleText);
+  manageButtonsDisplay();
 }
 
 function startQuiz() {
@@ -190,8 +183,7 @@ function startQuiz() {
   startTimer();
 }
 
-function showResultOnTimeOut() {
-  let titleText = 'Skończył się czas. Koniec Quizu!';
+function renderResultText(titleText) {
   let contentText = `Odpowiedziałaś dobrze na ${correctAnswers} z ${questions.length} pytań.`;
 
   const mainElement = document.querySelector('main');
@@ -199,12 +191,14 @@ function showResultOnTimeOut() {
       <p>${titleText}</p>
       <p>${contentText}</p>
     `;
+}
 
-  nextButton.style.display = 'none';
+function manageButtonsDisplay() {
   resultButton.style.display = 'none';
   lastButton.style.display = 'block';
   showAnswerButton.style.display = 'none';
   timerDisplay.style.display = 'none';
+  nextButton.style.display = 'none';
 }
 
 startQuiz();
