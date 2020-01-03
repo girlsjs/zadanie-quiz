@@ -37,44 +37,21 @@ const questions = [{
 ];
 
 //INFORMATION PANEL
-let step = 'step1';
-
-const step1 = document.getElementById('step1');
-const step2 = document.getElementById('step2');
-const step3 = document.getElementById('step3');
-const step4 = document.getElementById('step4');
-
 function next() {
-  if (step === 'step1') {
-    step = 'step2';
-    step1.classList.remove("is-active");
-    step1.classList.add("is-complete");
-    step2.classList.add("is-active");
+  let isActive = document.getElementsByClassName("is-active")[0];
 
-  } else if (step === 'step2') {
-    step = 'step3';
-    step2.classList.remove("is-active");
-    step2.classList.add("is-complete");
-    step3.classList.add("is-active");
+  if (isActive !== undefined && isActive !== null) {
+    isActive.classList.remove("is-active");
+  }
 
-  } else if (step === 'step3') {
-    step = 'step4d';
-    step3.classList.remove("is-active");
-    step3.classList.add("is-complete");
-    step4.classList.add("is-active");
+  let step = document.getElementById(`step${currentQuestion}`);
+  step.classList.add("is-active");
 
-  } else if (step === 'step4d') {
-    step = 'complete';
-    step4.classList.remove("is-active");
-    step4.classList.add("is-complete");
-
-  } else if (step === 'complete') {
-    step = 'step1';
-    step4.classList.remove("is-complete");
-    step3.classList.remove("is-complete");
-    step2.classList.remove("is-complete");
-    step1.classList.remove("is-complete");
-    step1.classList.add("is-active");
+  let completeSteps = [];
+  if (currentQuestion > 0) {
+    let completeStep = document.getElementById(`step${currentQuestion - 1}`);
+    completeSteps.push(completeStep);
+    completeSteps.forEach(el => el.classList.add("is-complete"));
   }
 }
 //END INFORMATION PANEL
@@ -202,6 +179,9 @@ function showResult(titleText, callVerify) {
 
   renderResultText(titleText);
   manageButtonsDisplay();
+  let step = document.getElementById(`step${currentQuestion}`);
+  step.classList.add("is-complete");
+  step.classList.remove("is-active");
 }
 
 function startQuiz() {
@@ -219,10 +199,14 @@ function startQuiz() {
   </radiogroup>
   <p></p>
   `;
-
+  renderProgressSteps();
   currentQuestion = 0;
   lastButton.style.display = 'none';
   nextButton.style.display = 'block';
+  let completeSteps = document.getElementsByClassName('is-complete');
+  if (completeSteps !== undefined && completeSteps !== null && completeSteps.length > 0) {
+    Array.from(completeSteps).forEach(el => el.classList.remove('is-complete'));
+  }
   showQuestion(currentQuestion);
   startTimer();
 }
@@ -245,5 +229,17 @@ function manageButtonsDisplay() {
   nextButton.style.display = 'none';
 }
 
-startQuiz();
+function renderProgressSteps() {
+  const progressStep= document.getElementsByClassName('progress-step');
 
+  if (progressStep.length >= questions.length) {
+    Array.from(progressStep).forEach(el => el.remove());
+  }
+
+  let progressContainer = document.getElementById('progress');
+  for(let i = 0; i < questions.length; i++){
+    progressContainer.innerHTML+=`<div id='step${i}' class="progress-step"></div>`;
+  }
+}
+
+startQuiz();
