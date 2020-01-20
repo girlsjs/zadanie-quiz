@@ -37,21 +37,21 @@ const questions = [{
 ];
 
 //INFORMATION PANEL
-function next() {
-  let isActive = document.getElementsByClassName("is-active")[0];
+function next(i) {
+  let isActive = document.querySelector("is-active");
+  isActive && isActive.classList.remove("is-active");
 
-  if (isActive !== undefined && isActive !== null) {
-    isActive.classList.remove("is-active");
-  }
-
-  let step = document.getElementById(`step${currentQuestion}`);
-  step.classList.add("is-active");
+  let step = document.getElementById(`step${i}`);
+  step && step.classList.add("is-active");
 
   let completeSteps = [];
   if (currentQuestion > 0) {
-    let completeStep = document.getElementById(`step${currentQuestion - 1}`);
+    let completeStep = document.getElementById(`step${i - 1}`);
     completeSteps.push(completeStep);
-    completeSteps.forEach(el => el.classList.add("is-complete"));
+    completeSteps && completeSteps.forEach(el => {
+      el.classList.add("is-complete");
+      el.classList.remove("is-active");
+    });
   }
 }
 //END INFORMATION PANEL
@@ -117,7 +117,7 @@ function showQuestion(i) {
   let paragraph = document.querySelector('main p');
   paragraph.textContent = questions[i].question;
   showAnswers(i);
-  next();
+  next(i);
 }
 
 //show answers
@@ -204,9 +204,7 @@ function startQuiz() {
   lastButton.style.display = 'none';
   nextButton.style.display = 'block';
   let completeSteps = document.getElementsByClassName('is-complete');
-  if (completeSteps !== undefined && completeSteps !== null && completeSteps.length > 0) {
-    Array.from(completeSteps).forEach(el => el.classList.remove('is-complete'));
-  }
+  completeSteps && Array.from(completeSteps).forEach(el => el.classList.remove('is-complete'));
   showQuestion(currentQuestion);
   startTimer();
 }
