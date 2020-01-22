@@ -38,21 +38,11 @@ const questions = [{
 
 //INFORMATION PANEL
 function next(i) {
-  let isActive = document.querySelector("is-active");
+  const step = document.getElementById(`step${i}`);
+  const isActive = document.querySelector(".is-active");
   isActive && isActive.classList.remove("is-active");
-
-  let step = document.getElementById(`step${i}`);
+  isActive && isActive.classList.add("is-complete");
   step && step.classList.add("is-active");
-
-  let completeSteps = [];
-  if (currentQuestion > 0) {
-    let completeStep = document.getElementById(`step${i - 1}`);
-    completeSteps.push(completeStep);
-    completeSteps && completeSteps.forEach(el => {
-      el.classList.add("is-complete");
-      el.classList.remove("is-active");
-    });
-  }
 }
 //END INFORMATION PANEL
 
