@@ -250,6 +250,9 @@ footer {
 	body {
 		font-size: 10px;
 	}
+  .progress {
+    display: none;
+  }
 	.checkmark {
 		height: 16px;
   	width: 16px;

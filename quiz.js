@@ -37,45 +37,12 @@ const questions = [{
 ];
 
 //INFORMATION PANEL
-let step = 'step1';
-
-const step1 = document.getElementById('step1');
-const step2 = document.getElementById('step2');
-const step3 = document.getElementById('step3');
-const step4 = document.getElementById('step4');
-
-function next() {
-  if (step === 'step1') {
-    step = 'step2';
-    step1.classList.remove("is-active");
-    step1.classList.add("is-complete");
-    step2.classList.add("is-active");
-
-  } else if (step === 'step2') {
-    step = 'step3';
-    step2.classList.remove("is-active");
-    step2.classList.add("is-complete");
-    step3.classList.add("is-active");
-
-  } else if (step === 'step3') {
-    step = 'step4d';
-    step3.classList.remove("is-active");
-    step3.classList.add("is-complete");
-    step4.classList.add("is-active");
-
-  } else if (step === 'step4d') {
-    step = 'complete';
-    step4.classList.remove("is-active");
-    step4.classList.add("is-complete");
-
-  } else if (step === 'complete') {
-    step = 'step1';
-    step4.classList.remove("is-complete");
-    step3.classList.remove("is-complete");
-    step2.classList.remove("is-complete");
-    step1.classList.remove("is-complete");
-    step1.classList.add("is-active");
-  }
+function next(i) {
+  const step = document.getElementById(`step${i}`);
+  const isActive = document.querySelector(".is-active");
+  isActive && isActive.classList.remove("is-active");
+  isActive && isActive.classList.add("is-complete");
+  step && step.classList.add("is-active");
 }
 //END INFORMATION PANEL
 
@@ -140,7 +107,7 @@ function showQuestion(i) {
   let paragraph = document.querySelector('main p');
   paragraph.textContent = questions[i].question;
   showAnswers(i);
-  next();
+  next(i);
 }
 
 //show answers
@@ -202,6 +169,9 @@ function showResult(titleText, callVerify) {
 
   renderResultText(titleText);
   manageButtonsDisplay();
+  let step = document.getElementById(`step${currentQuestion}`);
+  step.classList.add("is-complete");
+  step.classList.remove("is-active");
 }
 
 function startQuiz() {
@@ -219,10 +189,12 @@ function startQuiz() {
   </radiogroup>
   <p></p>
   `;
-
+  renderProgressSteps();
   currentQuestion = 0;
   lastButton.style.display = 'none';
   nextButton.style.display = 'block';
+  let completeSteps = document.getElementsByClassName('is-complete');
+  completeSteps && Array.from(completeSteps).forEach(el => el.classList.remove('is-complete'));
   showQuestion(currentQuestion);
   startTimer();
 }
@@ -245,5 +217,17 @@ function manageButtonsDisplay() {
   nextButton.style.display = 'none';
 }
 
-startQuiz();
+function renderProgressSteps() {
+  const progressStep= document.getElementsByClassName('progress-step');
 
+  if (progressStep.length >= questions.length) {
+    Array.from(progressStep).forEach(el => el.remove());
+  }
+
+  let progressContainer = document.getElementById('progress');
+  for(let i = 0; i < questions.length; i++){
+    progressContainer.innerHTML+=`<div id='step${i}' class="progress-step"></div>`;
+  }
+}
+
+startQuiz();
