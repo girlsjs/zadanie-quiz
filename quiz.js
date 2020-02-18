@@ -33,6 +33,60 @@ const questions = [{
     c: "ECMAScript"
   },
   correctAnswer: "c"
+},
+{
+  question: "Która z poniższych metod wywołuje funkcję dla każdego elementu tablicy?",
+  answers: {
+    a: "forEach()",
+    b: "each()",
+    c: "withEach()"
+  },
+  correctAnswer: "a"
+},
+{
+  question: "W jaki sposób komentujemy linię w JavaScript:",
+  answers: {
+    a: "<--To jest komentarz -->",
+    b: "// To jest komentarz",
+    c: "** To jest komentarz **"
+  },
+  correctAnswer: "b"
+},
+{
+  question: "Przykład prawidłowej składni instrukcji if to:",
+  answers: {
+    a: "if i==5 then",
+    b: "if i=5",
+    c: "if(i==5)"
+  },
+  correctAnswer: "c"
+},
+{
+  question: "Które ze zdarzeń ma miejsce podczas kliknięcia elementu HTML?:",
+  answers: {
+    a: "onclick",
+    b: "ondrop",
+    c: "onmouseclick"
+  },
+  correctAnswer: "a"
+},
+{
+  question: "Które słowo kluczowe uniemożliwia ponowną deklarację?:",
+  answers: {
+    a: "let",
+    b: "const",
+    c: "var"
+  },
+  correctAnswer: "b"
+},
+{
+  question: "Jak wybrać z dokumentu pierwszy element o klasie 'top':",
+  answers: {
+    a: "document.querySelector('.top');",
+    b: "document.querySelectorAll('.top)",
+    c: "document.querySelector('top')"
+  },
+  correctAnswer: "a"
 }
 ];
 
@@ -218,15 +272,15 @@ function manageButtonsDisplay() {
 }
 
 function renderProgressSteps() {
-  const progressStep= document.getElementsByClassName('progress-step');
+  const progressStep = document.getElementsByClassName('progress-step');
 
   if (progressStep.length >= questions.length) {
     Array.from(progressStep).forEach(el => el.remove());
   }
 
   let progressContainer = document.getElementById('progress');
-  for(let i = 0; i < questions.length; i++){
-    progressContainer.innerHTML+=`<div id='step${i}' class="progress-step"></div>`;
+  for (let i = 0; i < questions.length; i++) {
+    progressContainer.innerHTML += `<div id='step${i}' class="progress-step"></div>`;
   }
 }
 
