@@ -71,13 +71,13 @@ const questions = [{
   correctAnswer: "a"
 },
 {
-  question: "Które słowo kluczowe uniemożliwia ponowną deklarację?:",
+  question: "Który ze sposobów przechowywania danych zapisuje je na komputerze klienta bez ograniczeń czasowych?",
   answers: {
-    a: "let",
-    b: "const",
-    c: "var"
+    a: "sessionStorage",
+    b: "cookie",
+    c: "localStorage"
   },
-  correctAnswer: "b"
+  correctAnswer: "c"
 },
 {
   question: "Jak wybrać z dokumentu pierwszy element o klasie 'top':",
